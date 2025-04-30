@@ -1,0 +1,37 @@
+# Node.js dependencies
+node_modules/
+
+# Build artifacts
+build/
+
+# Logs
+logs/
+*.log
+
+# Coverage reports
+coverage/
+
+# Jest cache and coverage
+jest-cache/
+jest-coverage/
+
+# TypeScript
+*.tsbuildinfo
+
+# IDE and OS files
+.DS_Store
+.vscode/
+.idea/
+*.swp
+
+# Temporary files
+*.tmp
+*.temp
+
+# Generated files
+*.lock
+package-lock.json
+yarn.lock
+
+# Coverage reports
+lcov-report/
