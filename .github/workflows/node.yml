@@ -1,4 +1,4 @@
-name: Node.js CI
+name: MCP Server CI
 
 on:
   push:
@@ -29,18 +29,21 @@ jobs:
     - name: Run type check
       run: npm run lint
     
-    - name: Run tests
+    - name: Run unit tests
       run: npm test
       env:
         CI: true
 
+    - name: Run integration tests
+      run: npm run test:integration
+      env:
+        CI: true
+
+    - name: Validate MCP configuration
+      run: npm run validate:mcp
+
     - name: Build
       run: npm run build
-    
-    - name: Upload coverage reports
-      uses: codecov/codecov-action@v4
-      with:
-        token: ${{ secrets.CODECOV_TOKEN }}
-        fail_ci_if_error: true
-      env:
-        CODECOV_TOKEN: ${{ secrets.CODECOV_TOKEN }}
+
+    - name: Check server health
+      run: npm run health-check
