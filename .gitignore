@@ -30,7 +30,6 @@ jest-coverage/
 
 # Generated files
 *.lock
-package-lock.json
 yarn.lock
 
 # Coverage reports
